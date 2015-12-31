@@ -23,4 +23,5 @@ def graph(chartID = 'chart_ID', chart_type = 'line', chart_height = 500):
 
 
 if __name__ == "__main__":
+	app.debug = True
 	app.run()
