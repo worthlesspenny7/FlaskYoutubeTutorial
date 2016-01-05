@@ -13,9 +13,10 @@ def homepage():
 @app.route('/graph')
 def graph(chartID = 'chart_ID', chart_type = 'line', chart_height = 500):
 	chart = {"renderTo": chartID, "type": chart_type, "height": chart_height,}
-	series = [{"name": 'Label1', "data": [1,2,3]}, {"name": 'Label2', "data": [4, 5, 6]}]
+	data1 = [7, 8, 9, 10, 11, 12, 13, 15, 15, 11, 8, 7]
+	series = [{"name": 'Label1', "data": data1}, {"name": 'Label2', "data": [4, 5, 6]}]
 	graph_title = {"text": 'My Title'}
-	xAxis = {"categories": ['xAxis Data1', 'xAxis Data2', 'xAxis Data3']}
+	xAxis = {"categories": ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Oct', 'Sept', 'Nov', 'Dec']}
 	yAxis = {"title": {"text": 'yAxis Label'}}
 	return render_template('index.html', chartID=chartID, chart=chart, series=series, graph_title=graph_title, xAxis=xAxis, yAxis=yAxis)
 	
