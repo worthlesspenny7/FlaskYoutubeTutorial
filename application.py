@@ -12,9 +12,12 @@ def homepage():
 
 @app.route('/graph')
 def graph(chartID = 'chart_ID', chart_type = 'line', chart_height = 500):
+	def calc():
+		data1 = [7, 8, 9, 10, 11, 12, 13, 15, 15, 11, 8, 7]
+		return data1
 	chart = {"renderTo": chartID, "type": chart_type, "height": chart_height,}
-	data1 = [7, 8, 9, 10, 11, 12, 13, 15, 15, 11, 8, 7]
-	series = [{"name": 'Label1', "data": data1}, {"name": 'Label2', "data": [4, 5, 6]}]
+#	data1 = [7, 8, 9, 10, 11, 12, 13, 15, 15, 11, 8, 7]
+	series = [{"name": 'Label1', "data": calc()}, {"name": 'Label2', "data": [4, 5, 6]}]
 	graph_title = {"text": 'My Title'}
 	xAxis = {"categories": ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Oct', 'Sept', 'Nov', 'Dec']}
 	yAxis = {"title": {"text": 'yAxis Label'}}
